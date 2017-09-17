@@ -122,6 +122,7 @@ b{
 .panel.panel-default.choose
 {
 	border: 2px solid black;
+
 	
 	
 }
@@ -138,49 +139,49 @@ b{
 {
 	
 	background-image: url(images/doc1.png);
-	height: 300px;
+	height: 250px;
 	background-repeat: no-repeat;
-	background-size: 70%;
+	background-size: 60%;
 	background-position: center;
 	
 }
 
-.panel.panel-default.choose > .panel-heading.item1_choose:hover
+/*.panel.panel-default.choose > .panel-heading.item1_choose:hover
 {
-      background-size: 80%;	
-}
+      background-size: 55%;	
+}*/
 
 
 .panel.panel-default.choose > .panel-heading.item2_choose /*Trouble*/
 {
 	
 	background-image: url(images/flatpat.png);
-	height: 300px;
+	height: 250px;
 	background-repeat: no-repeat;
-	background-size: 70%;
+	background-size: 60%;
 	background-position: center;
 	
 }
-.panel.panel-default.choose > .panel-heading.item2_choose:hover
+/*.panel.panel-default.choose > .panel-heading.item2_choose:hover
 {
       background-size: 80%;	
-}
+}*/
 
 
 .panel.panel-default.choose > .panel-heading.item3_choose
 {
 	
 	background-image: url(images/flathos.png);
-	height: 300px;
+	height: 250px;
 	
 	background-repeat: no-repeat;
-	background-size: 70%;
+	background-size: 60%;
 	background-position: center;
 }
-.panel.panel-default.choose > .panel-heading.item3_choose:hover
+/*.panel.panel-default.choose > .panel-heading.item3_choose:hover
 {
       background-size: 80%;	
-}
+}*/
 
 
 
