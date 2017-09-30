@@ -24,14 +24,9 @@ $email = $_POST['hemail'];
 //echo "$name<br>$city<br>$address<br>$phone<br>$email<hr>";
 $sql = "INSERT INTO `hospital` (`h_id`, `h_name`, `h_city`, `h_address`, `h_phone`, `h_email`) VALUES (NULL, '$name', '$city', '$address', '$phone', '$email')";
 if (mysqli_query($conn, $sql)) {
-    echo "New record created successfully";
+    echo "<script>".alert('New record created successfully')."</script>";
 } else {
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 }
 mysqli_close($conn);
-?> 
-
-
-
-
-
+?>
