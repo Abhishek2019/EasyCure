@@ -85,7 +85,8 @@ session_start();
                 if($row[0] == $usr && $row[1] == $pass){
                   mysqli_close($conn);
                   $_SESSION["user"] = $usr;
-                  echo "<script>window.open('DoctorProfile.php')</script>";
+                  header('Location: DoctorProfile.php');
+                  //echo "<script>window.open('DoctorProfile.php')</script>";
                 } else {
                   mysqli_close($conn);
                   echo "<script>alert('Invalid Password')</script>";
