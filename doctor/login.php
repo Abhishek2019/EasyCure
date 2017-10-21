@@ -1,5 +1,6 @@
 <?php
-session_start();
+  session_start();
+  session_unset();
  ?>
 <!doctype html>
 <html>
@@ -52,7 +53,7 @@ session_start();
 <div class="heading" style="font-family: Baskerville, 'Palatino Linotype', Palatino, 'Century Schoolbook L', 'Times New Roman', 'serif'">
 <font size="+6">Doctor's Login</font>
 </div>
-<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+<form method="post"  >
 	<div class="image">
       <img src="../images/doc1.png" width="250" height="250" alt="png"/>
     </div>
@@ -62,7 +63,7 @@ session_start();
   <input type="text" placeholder="Enter Username" name="uname" required><br>
   <label><b>Password&nbsp</b></label><br>
   <input type="password" placeholder="Enter Password" name="psw" required><br>
-    <button type="submit">Login</button><br>
+    <button type="submit" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">Login</button><br>
     <a href="signup.php">not Sign Up yet?</a><br><br>
     </font>
   </div>
@@ -84,7 +85,7 @@ session_start();
                 $row=mysqli_fetch_array($result,MYSQLI_NUM);
                 if($row[0] == $usr && $row[1] == $pass){
                   mysqli_close($conn);
-                  $_SESSION["user"] = $usr;
+                  $_SESSION["d_userName"] = $usr;
                   header('Location: DoctorProfile.php');
                   //echo "<script>window.open('DoctorProfile.php')</script>";
                 } else {
