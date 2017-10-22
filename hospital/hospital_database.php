@@ -19,7 +19,7 @@ $name = $_POST['hname'];
 $city = $_POST['hcity'];
 $address = $_POST['haddress'];
 $phone = $_POST['hphone'];
-$email = $_POST['hemail'];
+$email = $_POST['hmail'];
 
 //echo "$name<br>$city<br>$address<br>$phone<br>$email<hr>";
 $sql = "INSERT INTO `hospital` (`h_id`, `h_name`, `h_city`, `h_address`, `h_phone`, `h_email`) VALUES (NULL, '$name', '$city', '$address', '$phone', '$email')";
@@ -30,3 +30,34 @@ if (mysqli_query($conn, $sql)) {
 }
 mysqli_close($conn);
 ?>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sign up</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div class="head">
+<h1>SignUp</h1>
+</div>
+<div class="container">
+	<form action="">
+	    <img src="../images/flathos.png" alt="Hospital" id="logo"><br><br>
+		<label>Hospital Name</label><br>
+		<input type="text" name="hname" id="hname"><br><br>
+		<label>Hospital Username</label><br>
+		<input type="text" name="huser" id="huser"><br><br>
+		<label>Password</label><br>
+		<input type="Password" name="hpass" id="hpass"><br><br>
+		<label>Hospital Contact No</label><br>
+		<input type="text" name="hphone" id="h"><br><br>
+		<label>Hospital Address</label><br>
+		<input type="text" name="haddress" id="haddress"><br><br>
+		<label>Hospital Email</label><br>
+		<input type="text" name="hmail" id="hmail"><br><br>
+		<button type="submit" name="submit" id="submit">Sign Up</button>
+	</form>
+</div>
+
+</body>
+</html>
