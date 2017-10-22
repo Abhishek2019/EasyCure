@@ -10,18 +10,27 @@
     <meta charset="utf-8">
   <!--  <link rel="stylesheet" href="/css/bootstrap.css">   -->
     <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <title>PHP Demo</title>
-    <style>
-    </style>
+    <title>Doctor Profile</title>
   </head>
   <body>
-
-    <nav class="navbar navbar-inverse bg-inverse">
-      <span>
-        <img class="img-circle" src="../images/doc.jpeg" width="60px" height="60px">
-        </span>
-
-    </nav>
+<!--
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+            <img class="navbar-brand" src="../images/doc.jpeg" width="60px" height="60px">
+        </div>
+          <ul class="nav navbar-nav">
+              <li><input class="button" type="reset" name="" value="Logout."></li>
+              <li><h2 id="DocName">Hello!</h2></li>
+          </ul>
+      </div>
+-->
+  <nav class="navbar navbar-light bg-faded">
+      <img class="navbar-brand" src="../images/doc.jpeg" width="60" height="60" class="d-inline-block align-top" alt="">
+    <ul class="navbar-nav">
+      <li class="navbar-item"> <input class="button" type="submit" name="" value=" Logout." onclick=""> </li>
+    </ul>
+  </nav>
 
 <div class="container">
      <ul class="nav nav-tabs nav-justified">
@@ -52,9 +61,17 @@
          </div>
        </div>
 
-       <div role="tabpanel" class="tab-pane fade" id="Profile_edit">2</div>
+       <div role="tabpanel" class="tab-pane fade" id="Profile_edit">
+             <?php
+               require 'editProfile.php';
+             ?>
+       </div>
        <div role="tabpanel" class="tab-pane fade" id="Req_blood">3</div>
-       <div class="tab-pane fade" role="tabpanel" id="Profile">4</div>
+       <div class="tab-pane fade" role="tabpanel" id="Profile">
+         <?php
+           require 'showProfile.php';
+          ?>
+       </div>
      </div>
    </div>
   </div>

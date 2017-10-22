@@ -98,33 +98,34 @@
 -->
 
 <?php
-error_reporting(E_ERROR | E_PARSE);
+	error_reporting(E_ERROR | E_PARSE);
+	if(!empty($_POST['uname']) ){
+		$hostname = "localhost";
+		$dbuser = "root";
+		$dbpass = "";
+		$dbname = "easycure";
+		$conn = mysqli_connect($hostname, $dbuser, $dbpass, $dbname);
+		if (!$conn) {
+				die("Connection failed: " . mysqli_connect_error());
+		}
 
-$hostname = "localhost";
-$dbuser = "root";
-$dbpass = "";
-$dbname = "easycure";
-$conn = mysqli_connect($hostname, $dbuser, $dbpass, $dbname);
-if (!$conn) {
-		die("Connection failed: " . mysqli_connect_error());
-}
+		$name = $_POST['flname'];
+		$username = $_POST['uname'];
+		$phone = $_POST['phone'];
+		$email = $_POST['email'];
+		$degree = $_POST['degree'];
+		$Specialist = $_POST['specialist'];
+		$password = $_POST['psw'];
+		$gender = $_POST['gender'];
 
-$name = $_POST['flname'];
-$username = $_POST['uname'];
-$phone = $_POST['phone'];
-$email = $_POST['email'];
-$degree = $_POST['degree'];
-$Specialist = $_POST['specialist'];
-$password = $_POST['psw'];
-$gender = $_POST['gender'];
+		//echo "<script>alert('$gender')</script>";
+		$sql = "INSERT INTO `doctor` (`d_user`, `d_name`, `d_pass`, `d_phone`, `d_email`, `d_degree`, `d_gender`, `d_specalist`) VALUES ('$username', '$name', '$password', '$phone', '$email', '$degree', '$gender', '$Specialist')";
 
-//echo "<script>alert('$gender')</script>";
-$sql = "INSERT INTO `doctor` (`d_user`, `d_name`, `d_pass`, `d_phone`, `d_email`, `d_degree`, `d_gender`, `d_specalist`) VALUES ('$username', '$name', '$password', '$phone', '$email', '$degree', '$gender', '$Specialist')";
-
-	if (mysqli_query($conn, $sql)) {
-	echo "<script>alert('New record created successfully')</script>";
-	} else {
-	echo "<script>alert('Registration Failed Try Again.')</script>";		//'Error: ' . $sql . '<br>' . mysqli_error($conn)
+			if (mysqli_query($conn, $sql)) {
+			echo "<script>alert('New record created successfully')</script>";
+			} else {
+			echo "<script>alert('Registration Failed Try Again.')</script>";		//'Error: ' . $sql . '<br>' . mysqli_error($conn)
+			}
+			mysqli_close($conn);
 	}
-	mysqli_close($conn);
  ?>
