@@ -1,0 +1,98 @@
+body
+{
+  overflow: hidden;	
+}
+
+.navbar.navbar-default
+{
+    background-color: #555555;
+    
+    
+}
+.navbar-brand{
+    /left:calc(50% - 75px);/
+    position: relative;
+    padding: 0;
+   /top: 0px;/
+    border-bottom-color: red;
+}
+.navbar-brand:hover{
+    -webkit-transform: scale(1.2,1.2);
+    top: 0px;
+}
+
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus,
+.navbar-default .navbar-nav > .open >a {
+    text-decoration: underline;
+    text-decoration-color: chartreuse;
+    background-color: #333333;
+    display: block;
+}
+
+
+
+
+b{
+    font-size: 100%;
+}
+.nav.navbar-nav li:hover
+{
+
+    background-color: #333333;
+}
+
+
+/*li.dropdown:hover > .dropdown-menu
+{
+    display: block;
+    color: #82A30A;
+}*/
+
+.navbar.navbar-default .nav.navbar-nav > li >a
+{ 
+
+    color: ghostwhite;
+}
+
+
+
+
+#main_title
+{
+    
+    padding-top: 60px;
+    padding-left: -10px;
+    vertical-align: middle;
+   /* background-repeat: no-repeat;
+    background-size: cover;*/
+    font-family: 'Titillium Web', sans-serif;
+     background: linear-gradient(to top ,rgba(0, 120, 0, 0.7) 0%, rgba(0, 200, 0, 0.7) 90%);
+     /background: linear-gradient(to top left, #cc6699 0%, #006699 100%);/
+     /background: linear-gradient(to bottom right, #cbcbcb 0%, #555555 100%);/
+    color: ghostwhite;
+    height: auto;
+    min-height: 200px;
+	width: auto;
+    background-position: center;
+   /* background-image: linear-gradient(to bottom, rgba(0, 100, 0, 0.7) 0%, rgba(0, 100, 0, 0.7) 100%), url(../roshan/SFIT/green.gif);
+    */
+/*  #E5E5E5*/
+}
+
+#main_title h1{
+    /font-family: 'Open Sans', sans-serif;/
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 350%;
+    
+}
+
+.profile_pic
+{
+	background-image: url(../css/images/profile_p.png);
+	background-position: center;
+	background-repeat: no-repeat;	
+		
+}
