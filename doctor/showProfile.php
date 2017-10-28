@@ -19,13 +19,13 @@
       $sql = "SELECT * FROM `doc_schedule` WHERE d_user = '$docUserName' ";
       $result = mysqli_query($conn, $sql);
       $row = mysqli_fetch_assoc($result);
-      $fees = $row['fees']; $hospital = $row['h_user'];
+      $fees = $row['fees'];
       $sun = $row['sun']; $mon = $row['mon']; $tue = $row['tue']; $wed = $row['wed']; $thu = $row['thu']; $fri = $row['fri']; $sat = $row['sat'];
 
-      $sql = "SELECT `h_name` FROM `easycure`.`hospital` WHERE `h_user` = '$hospital' ";
+      $sql = "SELECT h_name FROM hospital WHERE h_user=(SELECT h_user from doc_list where d_user='$docUserName')";
       $result = mysqli_query($conn, $sql);
       $row = mysqli_fetch_assoc($result);
-      $hospitalName = $row['h_name'];
+      $hospitalName = (!empty($_POST['sun'])) ? $row['h_name'] : 'NA';
       mysqli_close($conn);
  ?>
 

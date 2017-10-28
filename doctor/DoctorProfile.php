@@ -11,6 +11,7 @@
   <!--  <link rel="stylesheet" href="/css/bootstrap.css">   -->
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <title>Doctor Profile</title>
+
   </head>
   <body>
 <!--
@@ -28,7 +29,9 @@
   <nav class="navbar navbar-light bg-faded">
       <img class="navbar-brand" src="../images/doc.jpeg" width="60" height="60" class="d-inline-block align-top" alt="">
     <ul class="navbar-nav">
-      <li class="navbar-item"> <input class="button" type="submit" name="" value=" Logout." onclick=""> </li>
+      <form class=""  action="logout.php" method="post">
+          <li class="navbar-item"> <input class="Button" type="Submit"  value="Logout." onsubmit="" > </li>
+      </form>
     </ul>
   </nav>
 
@@ -66,7 +69,15 @@
                require 'editProfile.php';
              ?>
        </div>
-       <div role="tabpanel" class="tab-pane fade" id="Req_blood">3</div>
+
+
+       <div role="tabpanel" class="tab-pane fade" id="Req_blood">
+         <?php
+           require 'requestBlood.php';
+         ?>
+       </div>
+
+
        <div class="tab-pane fade" role="tabpanel" id="Profile">
          <?php
            require 'showProfile.php';

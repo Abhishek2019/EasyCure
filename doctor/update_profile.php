@@ -18,12 +18,6 @@ echo $new_wed.'<br>';
 echo $new_thu.'<br>';
 echo $new_fri.'<br>';
 echo $new_sat.'<br>';
-
-if(strlen((string)$new_phone) != 10){
-    echo "<script>alert('Enter Valid Phone Number')</script>";
-}else{
-    echo "<script>alert('Profile Updated')</script>";
-}
 */
 
 if(empty($new_name) && empty($new_phone) && empty($new_email) && empty($new_degree) && empty($new_specialist)){
@@ -47,7 +41,9 @@ if(empty($new_name) && empty($new_phone) && empty($new_email) && empty($new_degr
       die("Connection failed: " . mysqli_connect_error());
   }
 
+
   $sql1 = "UPDATE `doctor` SET `d_name`= '$new_name', `d_phone`= '$new_phone', `d_email`= '$new_email', `d_degree`= '$new_degree', `d_specalist`= '$new_specialist'  WHERE `doctor`.`d_user` = '$docUserName';";
+
   $sql2 = "UPDATE `doc_schedule` SET `fees`='$new_fees',`sun`='$new_sun',`mon`='$new_mon',`tue`='$new_tue',`wed`='$new_wed',`thu`='$new_thu',`fri`='$new_fri',`sat`='$new_sat' WHERE d_user = '$docUserName'; ";
 
   if(mysqli_query($conn, $sql1)){
