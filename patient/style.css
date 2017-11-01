@@ -1,0 +1,72 @@
+body{
+	margin:0;
+	padding:0;
+    
+    background-color: #9E9E9E; 
+}
+#logo{
+	width: 150px;
+	height: 150px;
+    
+    position: relative;
+}
+.head{
+	font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
+	font-size: 24px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	line-height: 26.4px;
+    color: #DD2C00;
+    text-align: center;
+}
+.container{
+		margin-left: 350px;
+		margin-right: 350px;
+	    font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
+	    font-size: 20px;
+	    font-style: normal;
+	    font-variant: normal;
+	    font-weight: 350;
+	    line-height: 24.4px;
+		color: #ffffff;
+
+		text-align: center;
+		background-color: #263238;
+		min-height: 800px;
+		min-width: 300px;
+		padding-top: 20px;
+		padding-bottom: 20px;
+}
+input[type=text], input[type=password] {
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+	box-sizing: border-box;
+	background-color: #FFffff;
+    color: #263238;
+    border-radius: 4%;
+}
+input[type=text]:focus, input[type=password]:focus {
+    background-color: #FFCCBC;
+    border-color: #DD2C00;
+
+}
+button{
+    background-color: #DD2C00;
+    
+    color: black;
+    padding: 14px 20px;
+    margin-bottom: 5px;
+	margin-top: 5px;
+    cursor: pointer;
+    width:15%;
+	border: none;
+	font-size: 20px;
+}	
+#submit:hover{
+	color: #E0E0E0;
+	background-color:#f44336;
+
+}
