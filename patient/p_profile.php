@@ -1,10 +1,10 @@
 <?php
 session_start();
-if(!isset($_SESSION['user'])){
-   header("location:hospital_login.php");
-}
+//echo "Welcome ".$_SESSION["p_user"];
+//session_unset();
+//session_destroy();
 ?>
- <!doctype html>
+
 <html>
 <head>
 
@@ -12,7 +12,7 @@ if(!isset($_SESSION['user'])){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Cache-control" content="no-cache">
-    <title>doclist</title>
+    <title>P_profile</title>
    
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     
@@ -29,7 +29,7 @@ if(!isset($_SESSION['user'])){
 
 </head>
 
-<body>
+<body class="container-fluid">
 
        <div class="navbar navbar-default navbar-fixed-top navbar-inverse" >
 
@@ -86,17 +86,10 @@ if(!isset($_SESSION['user'])){
               	   </ul>
               	   <ul class="nav navbar-nav navbar-right">  
               	    <li class="">
-						 <a href="profile.php"><b>Your Profile</b></a>
+						 <a href="p_profile.php"><b>Your Profile</b></a>
 
               	    </li>
               	   </ul>
-                    <ul class="nav navbar-nav navbar-right">  
-                    <li class="">
-             <a href="logout.php"><b>Logout</b></a>
-
-                    </li>
-                   </ul>
-
 
 
 
@@ -113,7 +106,7 @@ if(!isset($_SESSION['user'])){
        <div id="main_title">  
        <br>
 
-	   		<center><h1>Doctor list</h1></center>
+	   		<center><h1>Your Profile</h1></center>
 	   		
 	   </div>	
 	   
@@ -122,44 +115,82 @@ if(!isset($_SESSION['user'])){
 	      <center><img src="../css/images/profile_p.png" style="border: 1px solid black"></center>
 	   	
 	   </div>
-     <div class="list">
-      <center>
-       <table border="1" cellpadding="1" cellspacing="1">
-        <tr>
-          <th>Name</th>
-          <th>Specialist</th>
-          <th>Phone</th>
-          <th>Email</th>
-          <th>Degree</th>
-        </tr>
-        <?php
-        $db = mysqli_connect("localhost","root","","easycure");
-        $user = $_SESSION['user'];
-        $query = "SELECT * FROM `doc_list` where h_user='$user'";
-        $result = mysqli_query($db,$query);
-        $duser = array();
-        while($row = mysqli_fetch_assoc($result)){
-          $duser[] = $row['d_user'];
-        }
-        $sql="SELECT * FROM `doctor` WHERE d_user in (SELECT d_user FROM `doc_list` WHERE h_user='$user')";
-        $result1 = mysqli_query($db,$sql);
-        if (mysqli_num_rows($result1) > 0) {
-            // output data of each row    $row[""]
-        while($row = mysqli_fetch_assoc($result1)) {
-              //echo $row["h_name"];
-         echo "<tr> <td>".$row["d_name"]."</td>"."<td>".$row['d_specalist']."</td>"."<td>".$row['d_phone']."</td>"."<td>".$row['d_email']."</td>"."<td>".$row['d_degree']."</td><tr>";
-            }
-          }
-        ?>
-       </table></center>
-     </div>
 	   
-	   
-	   
+ <?php
+	
+		$conn = mysql_connect("localhost","root","");	
+		if($conn)
+		{
+			//echo "connected";
+			echo "<BR>";
+			
+			 if( mysql_select_db('easycure'))
+             {
+			 	//echo "Database found <BR>";
+				    $username=$_SESSION["p_user"];
+				
+				 echo "<BR>";
+				   
+					 $sql="SELECT * FROM patient where p_user='$username'";
+   	  				//$sql="DELETE FROM  patient WHERE name='$name'";
+   	  				$records=mysql_query($sql);
+				 
+				 
+				   function mysql_resultTo2DAssocArray( $result) {
+    					$i=0;
+    					$ret = array();
+    					while ($row = mysql_fetch_assoc($result))
+						{
+        						foreach ($row as $key => $value) {
+            					$ret[$i][$key] = $value;
+									
+            			}
+        				$i++;
+        				}
+    					return ($ret);
+    					}			
+				 
 
+				 
+
+				$r=mysql_resultTo2DAssocArray($records);
+			
+				//print_r(mysql_resultTo2DAssocArray($records));
+				 
+   			 }
+			 else
+			 {
+			 	echo"Database not found<BR>";	 
+			 }
+		}
+		else
+		{
+			echo "not connected";	
+		}
+
+	?>
+	   
+	   
+	   <div class="profile_info">
+	   
+	      <label><b>User Name : <?php echo $r[0]['p_user'] ?></b></label><br>
+	      <label><b>Name : <?php echo $r[0]['p_name'] ?></b></label><br>
+	      <label><b>Phone no : <?php echo $r[0]['p_phone'] ?></b></label><br>
+	      <label><b>Email id : <?php echo $r[0]['p_email'] ?></b></label><br>
+	      <label><b>Address : <?php echo $r[0]['p_address'] ?></b></label><br>	   	
+	   	
+	   </div>
+	   
+	   <?php
+	          // $r=mysql_resultTo2DAssocArray('&sql');
+	            // print_r($r);
+	
+	   ?>
+	  
+
+	   
 
 <script src="../bootstrap/jquery.min.js"></script>
-<script src="../bootstrap/bootstrap.js"></script>
-
+ <script src="../bootstrap/bootstrap.js"></script>
 </body>
-</html
+</html>

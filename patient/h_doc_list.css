@@ -70,8 +70,10 @@ b{
     background-size: cover;*/
     font-family: 'Titillium Web', sans-serif;
      background: linear-gradient(to top ,rgba(0, 120, 0, 0.7) 0%, rgba(0, 200, 0, 0.7) 90%);
-     /*background: linear-gradient(to top left, #cc6699 0%, #006699 100%);*/
-     /*background: linear-gradient(to bottom right, #cbcbcb 0%, #555555 100%);*/
+/*
+     /background: linear-gradient(to top left, #cc6699 0%, #006699 100%);/
+     /background: linear-gradient(to bottom right, #cbcbcb 0%, #555555 100%);
+*/
     color: ghostwhite;
     height: auto;
     min-height: 200px;
@@ -89,20 +91,9 @@ b{
     
 }
 
-.profile_pic
-{
-	background-image: url(../css/images/profile_p.png);
-	background-position: center;
-	background-repeat: no-repeat;	
-		
-}
-.profile_info
-{
-	
-	border: 1px solid black;
-	padding-left: 30px;
-	font-size: 25px;
-	
-}
+
+
+
+
 
 
