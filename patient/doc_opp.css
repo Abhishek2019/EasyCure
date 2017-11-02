@@ -1,6 +1,7 @@
+
 body
 {
-  overflow: auto;	
+  overflow: scroll;	
 }
 
 .navbar.navbar-default
@@ -59,7 +60,6 @@ b{
 
 
 
-
 #main_title
 {
     
@@ -88,21 +88,3 @@ b{
     font-size: 350%;
     
 }
-
-.profile_pic
-{
-	background-image: url(../css/images/profile_p.png);
-	background-position: center;
-	background-repeat: no-repeat;	
-		
-}
-.profile_info
-{
-	
-	border: 1px solid black;
-	padding-left: 30px;
-	font-size: 25px;
-	
-}
-
-

@@ -1,0 +1,227 @@
+
+body
+{
+  overflow: scroll;	
+}
+
+.navbar.navbar-default
+{
+    background-color: #555555;
+    
+    
+}
+.navbar-brand{
+    /*left:calc(50% - 75px);*/
+    position: relative;
+    padding: 0;
+   /*top: 0px;*/
+    border-bottom-color: red;
+}
+.navbar-brand:hover{
+    -webkit-transform: scale(1.2,1.2);
+    top: 0px;
+}
+
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus,
+.navbar-default .navbar-nav > .open >a {
+    text-decoration: underline;
+    text-decoration-color: chartreuse;
+    background-color: #333333;
+    display: block;
+}
+
+
+
+
+b{
+    font-size: 100%;
+}
+.nav.navbar-nav li:hover
+{
+
+    background-color: #333333;
+}
+
+
+/*li.dropdown:hover > .dropdown-menu
+{
+    display: block;
+    color: #82A30A;
+}*/
+
+.navbar.navbar-default .nav.navbar-nav > li >a
+{ 
+
+    color: ghostwhite;
+}
+
+
+
+#main_title
+{
+    
+    padding-top: 60px;
+    padding-left: -10px;
+    vertical-align: middle;
+   /* background-repeat: no-repeat;
+    background-size: cover;*/
+    font-family: 'Titillium Web', sans-serif;
+     background: linear-gradient(to top ,rgba(0, 120, 0, 0.7) 0%, rgba(0, 200, 0, 0.7) 90%);
+     /*background: linear-gradient(to top left, #cc6699 0%, #006699 100%);*/
+     /*background: linear-gradient(to bottom right, #cbcbcb 0%, #555555 100%);*/
+    color: ghostwhite;
+    height: auto;
+    min-height: 200px;
+	width: auto;
+    background-position: center;
+   /* background-image: linear-gradient(to bottom, rgba(0, 100, 0, 0.7) 0%, rgba(0, 100, 0, 0.7) 100%), url(../roshan/SFIT/green.gif);
+    */
+/*  #E5E5E5*/
+}
+
+#main_title h1{
+    /*font-family: 'Open Sans', sans-serif;*/
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 350%;
+    
+}
+
+/*#h_list
+{
+	text-align: left;
+	color: chartreuse;
+}*/
+
+/*
+.parallax { 
+    /* The image used 
+    background-image: url(patient.jpg);
+
+    /* Set a specific height */
+    /*height: 300px; 
+
+    /* Create the parallax scrolling effect 
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}*/
+
+#h_list
+{
+	/*border: 2px solid black;
+	*/
+	/*background: linear-gradient(to bottom right, #ccff33 0%, #66ccff 100%);
+	*/
+	background-color: white;
+}
+#h_list a
+{
+	
+ /* width: 20%;
+  height: 35px;
+  
+  border-radius: 0px;
+	*/
+	
+	 border-radius: 0px;
+	
+}
+#h_list h1
+{
+	
+	text-align: center;
+	padding-bottom: 20px;
+	color: black;
+		
+}
+#h_list h4
+{
+	
+	text-align: center;
+	padding-bottom: 20px;
+	color: black;
+	
+	
+}
+
+
+.panel.panel-default.h_list
+{
+	border: 2px solid black;
+	
+}
+
+.panel.panel-default.h_list > .panel-body.h_list
+{
+	height: 180px;
+	
+	/*text-align: justify;*/
+
+}
+
+.panel.panel-default.h_list > .panel-heading.item1_h_list
+{
+	
+	background-image: url(../css/images/hinduja.jpg);
+	height: 220px;
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;
+	
+}
+
+/*.panel.panel-default.choose > .panel-heading.item1_choose:hover
+{
+      background-size: 55%;	
+}*/
+
+
+.panel.panel-default.h_list > .panel-heading.item2_h_list /*Trouble*/
+{
+	
+	background-image: url(../css/images/asian_heart.jpg);
+	height: 220px;
+	background-repeat: no-repeat;
+
+	background-position: center;
+	background-size: contain
+	
+}
+/*.panel.panel-default.choose > .panel-heading.item2_choose:hover
+{
+      background-size: 80%;	
+}*/
+
+
+.panel.panel-default.h_list > .panel-heading.item3_h_list
+{
+	
+	background-image: url(../css/images/karuna.jpg);
+	height: 220px;
+	
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;
+}
+/*.panel.panel-default.choose > .panel-heading.item3_choose:hover
+{
+      background-size: 80%;	
+}*/
+
+
+
+.row
+{
+
+	padding-left: 45px;
+	padding-right: 45px;
+	background-color: darkred;
+	
+}
+
+
+
