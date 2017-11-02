@@ -1,6 +1,6 @@
 <?php
 session_start();
-//error_reporting(E_ERROR | E_PARSE);
+error_reporting(E_ERROR | E_PARSE);
 $docUserName = $_SESSION["d_userName"];
 
 /*
@@ -41,10 +41,18 @@ if(empty($new_name) && empty($new_phone) && empty($new_email) && empty($new_degr
       die("Connection failed: " . mysqli_connect_error());
   }
 
+  $sql = "SELECT h_user from doc_list where d_user='$docUserName'";
+  $result = mysqli_query($conn, $sql);
+  $row = mysqli_fetch_assoc($result);
+  $hospitalUserName =  $row['h_user'];
 
   $sql1 = "UPDATE `doctor` SET `d_name`= '$new_name', `d_phone`= '$new_phone', `d_email`= '$new_email', `d_degree`= '$new_degree', `d_specalist`= '$new_specialist'  WHERE `doctor`.`d_user` = '$docUserName';";
 
-  $sql2 = "UPDATE `doc_schedule` SET `fees`='$new_fees',`sun`='$new_sun',`mon`='$new_mon',`tue`='$new_tue',`wed`='$new_wed',`thu`='$new_thu',`fri`='$new_fri',`sat`='$new_sat' WHERE d_user = '$docUserName'; ";
+  if ($_POST['isNew'] == 'Y') {
+    $sql2 = "INSERT INTO `doc_schedule` (`d_user`, `h_user`, `fees`, `sun`, `mon`, `tue`, `wed`, `thu`, `fri`, `sat`) VALUES ('$docUserName', '$hospitalUserName', '$new_fees', '$new_sun', '$new_mon', '$new_tue', '$new_wed', '$new_thu', '$new_fri', '$new_sat')";
+  }else {
+    $sql2 = "UPDATE `doc_schedule` SET `fees`='$new_fees',`sun`='$new_sun',`mon`='$new_mon',`tue`='$new_tue',`wed`='$new_wed',`thu`='$new_thu',`fri`='$new_fri',`sat`='$new_sat' WHERE d_user = '$docUserName'; ";
+  }
 
   if(mysqli_query($conn, $sql1)){
     if(mysqli_query($conn, $sql2)){
@@ -59,6 +67,7 @@ if(empty($new_name) && empty($new_phone) && empty($new_email) && empty($new_degr
   mysqli_close($conn);
 
 }
+
 echo "<script> window.location.href = 'DoctorProfile.php'; </script>";
 
 ?>

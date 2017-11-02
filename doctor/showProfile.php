@@ -25,7 +25,7 @@
       $sql = "SELECT h_name FROM hospital WHERE h_user=(SELECT h_user from doc_list where d_user='$docUserName')";
       $result = mysqli_query($conn, $sql);
       $row = mysqli_fetch_assoc($result);
-      $hospitalName = (!empty($_POST['sun'])) ? $row['h_name'] : 'NA';
+      $hospitalName = (!empty($row['h_name'])) ? $row['h_name'] : 'NA';
       mysqli_close($conn);
  ?>
 
