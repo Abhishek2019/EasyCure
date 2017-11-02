@@ -14,12 +14,12 @@
     $row = mysqli_fetch_assoc($result);
     $name = $row['d_name']; $phone = $row['d_phone']; $email = $row['d_email']; $degree = $row['d_degree']; $specialist = $row['d_specalist'];
 
-    $sql = "SELECT `fees`, `sun`, `mon`, `tue`, `wed`, `thu`, `fri`, `sat` FROM `doc_schedule` WHERE d_user = '$docUserName' ";
+    $sql = "SELECT COUNT(d_user) As isThere,`fees`, `sun`, `mon`, `tue`, `wed`, `thu`, `fri`, `sat` FROM `doc_schedule` WHERE d_user = '$docUserName' ";
     $result = mysqli_query($conn, $sql);
     $row = mysqli_fetch_assoc($result);
 
     $fees = $row['fees']; $sun = $row['sun']; $mon = $row['mon']; $tue = $row['tue']; $wed = $row['wed']; $thu = $row['thu']; $fri = $row['fri'];
-    $sat = $row['sat'];
+    $sat = $row['sat']; $isThere = $row['isThere'];
 
     mysqli_close($conn);
 ?>
@@ -58,6 +58,7 @@
                   <td><input type="text" name="sat" value="<?php echo $sat; ?>"></td>
               </tr>
         </table>
+        <input type="hidden" name="isNew" value="<?php  print(($isThere == 0) ? 'Y': 'N'); ?>">
         <input class="button" type="submit" value="Submit" style="width:100%"><br><br><br>
     </form>
 </div>

@@ -24,22 +24,10 @@
     </style>
   </head>
   <body>
-<!--
-    <nav class="navbar navbar-default">
-      <div class="container-fluid">
-        <div class="navbar-header">
-            <img class="navbar-brand" src="../images/doc.jpeg" width="60px" height="60px">
-        </div>
-          <ul class="nav navbar-nav">
-              <li><input class="button" type="reset" name="" value="Logout."></li>
-              <li><h2 id="DocName">Hello!</h2></li>
-          </ul>
-      </div>
--->
+
 <div class="container">
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <img class="navbar-brand" src="../images/doc.jpeg" width="60" height="60" class="d-inline-block align-top" alt="">Satyam857
-     <!-- <h5 class="user">satyam857</h5>-->
+      <img class="navbar-brand" src="../images/doc.jpeg" width="60" height="60" class="d-inline-block align-top" alt=""><h5 class="">Welcome! <?PHP echo $_SESSION["d_userName"];?></h5>
       <ul class="navbar-nav">
         <form class="bt"  action="logout.php" method="post">
             <li class="navbar-item bt"><button type="button submit" class="btn btn-outline-primary" onsubmit="">Logout</button></li>
